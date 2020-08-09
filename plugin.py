@@ -18,5 +18,6 @@ class LspAngularPlugin(NpmClientHandler):
 
     @classmethod
     def get_binary_arguments(cls):
+        ng_log_location = os.path.join(sublime.cache_path(), cls.package_name, cls.server_directory, "ngls.log")
         ng_probe_location = os.path.join(sublime.cache_path(), cls.package_name, cls.server_directory, "node_modules")
-        return ['--ngProbeLocations', ng_probe_location, '--tsProbeLocations', ng_probe_location, '--stdio']
+        return ["--logFile", ng_log_location, "--ngProbeLocations", ng_probe_location, "--tsProbeLocations", ng_probe_location, "--stdio"]
