@@ -15,5 +15,8 @@
 		}
 	],
 	"initializationOptions": {},
-	"settings": {}
+	"settings": {},
+	"env": {
+		"TSC_NONPOLLING_WATCHER": "true"
+	}
 }
