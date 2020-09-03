@@ -1,7 +1,7 @@
 {
 	"languages": [
 		{
-			"languageId": "html",
+			"languageId": "html-ngx",
 			// ST3 configuration
 			"scopes": [
 				"text.html.ngx"
