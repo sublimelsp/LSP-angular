@@ -12,6 +12,21 @@
 			// ST4 configuration
 			"document_selector": "text.html.ngx",
 			"feature_selector": "text.html"
+		},
+		{
+			"languageId": "typescript",
+			// ST3 configuration
+			"scopes": [
+				"source.ts"
+			],
+			"syntaxes": [
+				"Packages/JavaScript/TypeScript.sublime-syntax",
+				"Packages/TypeScript Syntax/TypeScript.tmLanguage",
+				"Packages/User/JS Custom/Syntaxes/TypeScript.sublime-syntax"
+			],
+			// ST4 configuration
+			"document_selector": "source.ts",
+			"feature_selector": ""
 		}
 	],
 	"initializationOptions": {},
