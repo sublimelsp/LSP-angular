@@ -3,6 +3,6 @@
   "version": "1.0.0",
   "dependencies": {
     "@angular/language-server": "^0.1001.0",
-    "typescript": "^4.0.2"
+    "typescript": "^4.0.3"
   }
 }
