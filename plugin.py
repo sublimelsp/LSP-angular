@@ -21,3 +21,7 @@ class LspAngularPlugin(NpmClientHandler):
         ng_log_location = os.path.join(sublime.cache_path(), cls.package_name, cls.server_directory, "ngls.log")
         ng_probe_location = os.path.join(sublime.cache_path(), cls.package_name, cls.server_directory, "node_modules")
         return ["--logFile", ng_log_location, "--ngProbeLocations", ng_probe_location, "--tsProbeLocations", ng_probe_location, "--stdio"]
+
+    @classmethod
+    def install_in_cache(cls) -> bool:
+        return False
