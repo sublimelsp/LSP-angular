@@ -1,4 +1,11 @@
 {
+	"command": [
+		"node", "${server_path}",
+		"--logFile", "${server_directory_path}/ngls.log",
+		"--ngProbeLocations", "${server_directory_path}/node_modules",
+		"--tsProbeLocations", "${server_directory_path}/node_modules",
+		"--stdio"
+	],
 	"languages": [
 		{
 			"languageId": "html-ngx",
