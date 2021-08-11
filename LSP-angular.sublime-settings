@@ -6,21 +6,18 @@
 		"--tsProbeLocations", "${server_directory_path}/node_modules",
 		"--stdio"
 	],
+	// ST3
 	"languages": [
 		{
-			"languageId": "html",
-			// ST3 configuration
-			"scopes": [
-				"text.html.ngx"
-			],
+			"scopes": ["text.html.ngx"],
 			"syntaxes": [
 				"Packages/Ngx HTML/NgxHTML.sublime-syntax"
 			],
-			// ST4 configuration
-			"document_selector": "text.html.ngx",
-			"feature_selector": "text.html"
 		}
 	],
+	// ST4
+	"selector": "text.html.ngx",
+	"disabled_capabilities": {},
 	"initializationOptions": {},
 	"settings": {},
 	"env": {
