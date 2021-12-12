@@ -2,7 +2,7 @@
   "name": "sublime-ngls",
   "version": "1.0.0",
   "dependencies": {
-    "@angular/language-server": "^12.2.1",
+    "@angular/language-server": "^13.1.0",
     "typescript": "^4.5.3"
   }
 }
