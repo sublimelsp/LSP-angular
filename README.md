@@ -15,14 +15,14 @@ This is a helper package that automatically installs and updates the [Angular La
 Open configuration file using command palette with `Preferences: LSP-angular Settings` command or opening it from the Sublime menu (`Preferences > Package Settings > LSP > Servers > LSP-angular`).
 
 
-## Different Angular Version
+## Versioning
 
 For people who need an older version of the angular server,
 this is how to point to a local @angular/language-server.
 
 Override the start command in a ST project file, to point to a local @angular/language-server
 
-```json
+```javascript
 {
   "folders": [
     {
@@ -34,9 +34,9 @@ Override the start command in a ST project file, to point to a local @angular/la
       "LSP-angular": {
         "command": [
           "${node_bin}",
-          "${folder}/node_modules/@angular/language-server/index.js", // maybe adjust the path based on your project
-          "--ngProbeLocations", "${folder}/node_modules",  // maybe adjust the path based on your project
-          "--tsProbeLocations", "${folder}/node_modules",  // maybe adjust the path based on your project
+          "${folder}/node_modules/@angular/language-server/index.js", // adjust the path based on your project
+          "--ngProbeLocations", "${folder}/node_modules",  // adjust the path based on your project
+          "--tsProbeLocations", "${folder}/node_modules",  // adjust the path based on your project
           "--stdio"
         ]
       },
@@ -44,5 +44,3 @@ Override the start command in a ST project file, to point to a local @angular/la
   }
 }
 ```
-
-An example can be found at https://github.com/sublimelsp/LSP-angular/pull/97#issuecomment-1571887048
