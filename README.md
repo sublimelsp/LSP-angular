@@ -17,10 +17,13 @@ Open configuration file using command palette with `Preferences: LSP-angular Set
 
 ## Versioning
 
-For people who need an older version of the angular server,
-this is how to point to a local @angular/language-server.
+This language service extension relies on the `@angular/language-server` and `typescript` packages for its backend.
+`@angular/language-server` is always bundled with the extension, and is always the latest version at the time of the release.
 
-Override the start command in a ST project file, to point to a local @angular/language-server
+For people who need an older version of the angular server,
+this is how to point to a local `@angular/language-server`.
+
+Override the start command in a ST project file, to point to a local `@angular/language-server`
 
 ```javascript
 {
