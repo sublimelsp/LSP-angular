@@ -6,7 +6,6 @@
 		"--tsProbeLocations", "${server_directory_path}/node_modules",
 		"--stdio"
 	],
-	// ST3
 	"languages": [
 		{
 			"scopes": ["text.html.ngx"],
@@ -15,8 +14,6 @@
 			],
 		}
 	],
-	// ST4
-	"selector": "text.html.ngx",
 	"disabled_capabilities": {},
 	"initializationOptions": {},
 	"settings": {},
