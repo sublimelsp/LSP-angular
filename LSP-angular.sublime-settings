@@ -16,7 +16,7 @@
 		}
 	],
 	// ST4
-	"priority_selector": "source.ts string.quoted, source.js string.quoted",
+	"priority_selector": "source.ts meta.annotation string.quoted, source.js meta.annotation string.quoted",
 	"selector": "text.html.ngx | source.ts | source.js",
 	"disabled_capabilities": {},
 	"initializationOptions": {},
