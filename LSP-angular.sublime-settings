@@ -6,16 +6,6 @@
 		"--tsProbeLocations", "${server_directory_path}/node_modules",
 		"--stdio"
 	],
-	// ST3
-	"languages": [
-		{
-			"scopes": ["text.html.ngx"],
-			"syntaxes": [
-				"Packages/Ngx HTML/NgxHTML.sublime-syntax"
-			],
-		}
-	],
-	// ST4
 	"priority_selector": "source.ts meta.annotation string.quoted, source.js meta.annotation string.quoted",
 	"selector": "text.html.ngx | source.ts | source.js",
 	"disabled_capabilities": {},
