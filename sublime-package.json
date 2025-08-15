@@ -1,0 +1,98 @@
+{
+    "contributions": {
+        "settings": [
+            {
+                "file_patterns": [
+                    "/LSP-angular.sublime-settings"
+                ],
+                "schema": {
+                    "$id": "sublime://settings/LSP-angular",
+                    "allOf": [
+                        {
+                            "$ref": "sublime://settings/LSP-plugin-base"
+                        },
+                        {
+                            "$ref": "sublime://settings/LSP-angular#/definitions/PluginConfig"
+                        }
+                    ],
+                    "definitions": {
+                        "PluginConfig": {
+                            "properties": {
+                                "initializationOptions": {
+                                    "additionalProperties": false,
+                                    "properties": {}
+                                },
+                                "settings": {
+                                    "additionalProperties": false,
+                                    "properties": {
+                                        "angular.log": {
+                                            "type": "string",
+                                            "enum": [
+                                                "off",
+                                                "terse",
+                                                "normal",
+                                                "verbose"
+                                            ],
+                                            "default": "off",
+                                            "description": "Enables logging of the Angular server to a file. This log can be used to diagnose Angular Server issues. The log may contain file paths, source code, and other potentially sensitive information from your project."
+                                        },
+                                        "angular.enable-strict-mode-prompt": {
+                                            "type": "boolean",
+                                            "default": true,
+                                            "markdownDescription": "Prompt to enable the [strictTemplates](https://angular.dev/reference/configs/angular-compiler-options#stricttemplates) flag in [angularCompilerOptions](https://angular.dev/reference/configs/angular-compiler-options). Note that strict mode is only available when using Ivy."
+                                        },
+                                        "angular.suggest.includeAutomaticOptionalChainCompletions": {
+                                            "type": "boolean",
+                                            "default": true,
+                                            "markdownDescription": "Enable showing completions on potentially undefined values that insert an optional chain call. Requires TS 3.7+ and strict null checks to be enabled."
+                                        },
+                                        "angular.suggest.includeCompletionsWithSnippetText": {
+                                            "type": "boolean",
+                                            "default": true,
+                                            "markdownDescription": "Enable snippet completions from Angular language server. Requires using TypeScript 4.3+ in the workspace."
+                                        },
+                                        "angular.suggest.autoImports": {
+                                            "type": "boolean",
+                                            "default": true,
+                                            "markdownDescription": "Enable/disable auto import suggestions for the exported Angular components from the current project."
+                                        },
+                                        "angular.forceStrictTemplates": {
+                                            "type": "boolean",
+                                            "default": false,
+                                            "markdownDescription": "Enabling this option will force the language service to use [strictTemplates](https://angular.dev/reference/configs/angular-compiler-options#stricttemplates) and ignore the user settings in the `tsconfig.json`."
+                                        },
+                                        "angular.suppressAngularDiagnosticCodes": {
+                                            "type": "string",
+                                            "default": "",
+                                            "markdownDescription": "A comma-separated list of error codes in templates whose diagnostics should be ignored."
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            {
+                "file_patterns": [
+                    "/*.sublime-project"
+                ],
+                "schema": {
+                    "properties": {
+                        "settings": {
+                            "properties": {
+                                "LSP": {
+                                    "properties": {
+                                        "LSP-angular": {
+                                            "$ref": "sublime://settings/LSP-angular#/definitions/PluginConfig"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        ]
+    }
+}

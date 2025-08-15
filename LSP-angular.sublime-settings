@@ -10,7 +10,15 @@
 	"selector": "text.html.ngx | source.ts | source.js",
 	"disabled_capabilities": {},
 	"initializationOptions": {},
-	"settings": {},
+	"settings": {
+		"angular.log": "off",
+		"angular.enable-strict-mode-prompt": true,
+		"angular.suggest.includeAutomaticOptionalChainCompletions": true,
+		"angular.suggest.includeCompletionsWithSnippetText": true,
+		"angular.suggest.autoImports": true,
+		"angular.forceStrictTemplates": false,
+		"angular.suppressAngularDiagnosticCodes": ""
+	},
 	"env": {
 		"TSC_NONPOLLING_WATCHER": "true"
 	}
