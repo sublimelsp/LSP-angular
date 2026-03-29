@@ -9,7 +9,7 @@
 	"priority_selector": "source.ts meta.annotation string.quoted, source.js meta.annotation string.quoted",
 	"selector": "text.html.ngx | source.ts | source.js",
 	"disabled_capabilities": {},
-	"initializationOptions": {},
+	"initialization_options": {},
 	"settings": {
 		"angular.log": "off",
 		"angular.enable-strict-mode-prompt": true,
