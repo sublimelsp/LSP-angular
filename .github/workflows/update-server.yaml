@@ -13,5 +13,5 @@ jobs:
       configuration_file_path: 'vscode-ng-language-service/package.json'
       configuration_jq_query: '.contributes.configuration.properties'
       version_file: 'server/package.json'
-      version_regexp: '"@angular/language-server": "([^"]+)"'
+      version_regexp: '"@angular/language-server": "\^?([^"]+)"'
       version_transform: 'v{}'
