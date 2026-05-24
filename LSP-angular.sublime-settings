@@ -1,13 +1,4 @@
 {
-	"command": [
-		"${node_bin}", "${server_path}",
-		"--logFile", "${server_directory_path}/ngls.log",
-		"--ngProbeLocations", "${server_directory_path}/node_modules",
-		"--tsProbeLocations", "${server_directory_path}/node_modules",
-		"--stdio"
-	],
-	"priority_selector": "source.ts meta.annotation string.quoted, source.js meta.annotation string.quoted",
-	"selector": "text.html.ngx | source.ts | source.js",
 	"settings": {
 		"angular.log": "off",
 		"angular.enable-strict-mode-prompt": true,
@@ -19,5 +10,20 @@
 	},
 	"env": {
 		"TSC_NONPOLLING_WATCHER": "true"
-	}
+	},
+	// The path to the server binary used to start the language server.
+	// Use `auto` for the package to manage (install/update) the server automatically.
+	// NOTE: Change this instead of directly updating `command` - the `${server_path}` variable is dynamically resolved based on this setting.
+	// WARNING: Override at your own risk - using a custom binary can cause compatibility issues with server settings.
+	"server_path": "auto",
+	"command": [
+		"${node_bin}",
+		"${server_path}",
+		"--logFile", "${server_directory_path}/ngls.log",
+		"--ngProbeLocations", "${server_directory_path}/node_modules",
+		"--tsProbeLocations", "${server_directory_path}/node_modules",
+		"--stdio"
+	],
+	"priority_selector": "source.ts meta.annotation string.quoted, source.js meta.annotation string.quoted",
+	"selector": "text.html.ngx | source.ts | source.js",
 }
