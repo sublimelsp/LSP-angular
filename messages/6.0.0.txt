@@ -1,0 +1,25 @@
+=> 6.0.0
+
+# Breaking changes
+
+- Updated the server to Angular Language Server 22, which requires Node.js 22.22.3+, 24.15.0+ or 26+.
+  If you use your own Node.js installation, make sure that it matches these versions.
+- The server now uses TypeScript 6. The Angular 22 compiler reports some new template diagnostics
+  (for example `nullishCoalescingNotNullable` and `optionalChainNotNullable`) that might appear in existing projects.
+  Use the `angular.suppressAngularDiagnosticCodes` setting to hide specific diagnostics.
+- The `angular.*` settings were previously not passed to the server and had no effect. They are now applied, which
+  means that:
+  - `angular.suggest.includeAutomaticOptionalChainCompletions` and `angular.suggest.includeCompletionsWithSnippetText`
+    are now enabled by default.
+  - The server no longer writes a log file unless `angular.log` is set to a value other than `off`.
+  Most of those settings require restarting the server after changing them.
+
+# Features
+
+- Added settings for Angular template inlay hints (`angular.inlayHints.*`) and document symbols
+  (`angular.documentSymbols.*`).
+- Added the `angular.server.useClientSideFileWatcher` setting that delegates file watching to Sublime Text.
+  Requires a file watcher package, for example LSP-file-watcher-rust.
+- Prompt to enable `strictTemplates` when it is disabled in the project (can be turned off with the
+  `angular.enable-strict-mode-prompt` setting).
+- Show "initializing" in the status bar while the server loads a project.
