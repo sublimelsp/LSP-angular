@@ -6,7 +6,29 @@
 		"angular.suggest.includeCompletionsWithSnippetText": true,
 		"angular.suggest.autoImports": true,
 		"angular.forceStrictTemplates": false,
-		"angular.suppressAngularDiagnosticCodes": ""
+		"angular.suppressAngularDiagnosticCodes": "",
+		"angular.documentSymbols.enabled": true,
+		"angular.documentSymbols.showImplicitForVariables": false,
+		"angular.inlayHints.bindingHints.pipeOutputTypes": false,
+		"angular.inlayHints.bindingHints.propertyBindingTypes": false,
+		"angular.inlayHints.bindingHints.requiredInputIndicator": "none",
+		"angular.inlayHints.bindingHints.twoWayBindingSignalTypes": false,
+		"angular.inlayHints.controlFlowHints.deferTriggerTypes": false,
+		"angular.inlayHints.controlFlowHints.switchExpressionTypes": false,
+		"angular.inlayHints.eventHints.hostListenerArgumentTypes": false,
+		"angular.inlayHints.eventHints.parameterTypes": false,
+		"angular.inlayHints.functionTypes.arrowFunctionParameterTypes": false,
+		"angular.inlayHints.functionTypes.arrowFunctionReturnTypes": false,
+		"angular.inlayHints.interaction.interactiveInlayHints": false,
+		"angular.inlayHints.parameterHints.nameHints": "all",
+		"angular.inlayHints.parameterHints.suppressWhenArgumentMatchesName": true,
+		"angular.inlayHints.variableTypes.forLoopVariableTypes": false,
+		"angular.inlayHints.variableTypes.ifAliasTypes": false,
+		"angular.inlayHints.variableTypes.letDeclarationTypes": false,
+		"angular.inlayHints.variableTypes.referenceVariableTypes": false,
+		"angular.inlayHints.variableTypes.suppressWhenTypeMatchesName": false,
+		// Requires a file watcher package, e.g. LSP-file-watcher-rust.
+		"angular.server.useClientSideFileWatcher": false
 	},
 	"env": {
 		"TSC_NONPOLLING_WATCHER": "true"
@@ -19,7 +41,6 @@
 	"command": [
 		"${node_bin}",
 		"${server_path}",
-		"--logFile", "${server_directory_path}/ngls.log",
 		"--ngProbeLocations", "${server_directory_path}/node_modules",
 		"--tsProbeLocations", "${server_directory_path}/node_modules",
 		"--stdio"
