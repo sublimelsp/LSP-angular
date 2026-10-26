@@ -36,15 +36,18 @@ class LspAngularPlugin(LspPlugin):
     @override
     def on_pre_start_async(cls, context: OnPreStartContext) -> None:
         package_name = cls.plugin_storage_path.name
-        NodeManager.on_pre_start_async(
+        server_directory = NodeManager.on_pre_start_async(
             context,
             cls.plugin_storage_path,
             ResourcePath('Packages', package_name, 'server'),
             Path('node_modules', '@angular', 'language-server', 'index.js'),
             node_version_requirement='>=22.22.3',
         )
+        if server_directory is None:
+            # Custom `server_path` - probe for Angular and TypeScript next to the custom server binary.
+            server_directory = Path(context.variables['server_path']).parent
         context.variables.update({
-            'server_directory_path': str(cls.plugin_storage_path / 'server')
+            'server_directory_path': str(server_directory),
         })
         cls._add_server_arguments(context)
 
@@ -56,7 +59,9 @@ class LspAngularPlugin(LspPlugin):
         args: list[str] = []
         log = settings.get('angular.log')
         if log and log != 'off':
-            args.extend(['--logFile', '${server_directory_path}/ngls.log', '--logVerbosity', log])
+            # Log outside of the server directory since its location changes on every server update.
+            cls.plugin_storage_path.mkdir(parents=True, exist_ok=True)
+            args.extend(['--logFile', str(cls.plugin_storage_path / 'ngls.log'), '--logVerbosity', log])
         if settings.get('angular.suggest.includeAutomaticOptionalChainCompletions'):
             args.append('--includeAutomaticOptionalChainCompletions')
         if settings.get('angular.suggest.includeCompletionsWithSnippetText'):
